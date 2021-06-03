@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_view_rv_playlist_menu"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/genshin_impact_noele" />
+
+    <TextView
+        android:id="@+id/tv_name_rv_playlist_menu"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/fjalla_one"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        tools:text="How displacement instability and uncertainty affect ..." />
+
+    <TextView
+        android:layout_width="31dp"
+        android:layout_height="16dp"
+        android:layout_below="@+id/tv_name_rv_playlist_menu"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/noto_sans"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        tools:text="04:14" />
+
+</RelativeLayout>

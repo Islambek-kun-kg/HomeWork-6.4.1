@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/lt_playlist_menu"
+        android:layout_width="match_parent"
+        app:contentInsetStart="0dp"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_back_arrow_playlist_menu"
+            android:layout_width="20dp"
+            android:layout_height="20.5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/back_arrow"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_back_playlist_menu"
+            android:layout_width="35dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="33.5dp"
+            android:layout_marginLeft="33.5dp"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/fjalla_one"
+            android:text="@string/back"
+            android:textColor="@color/red"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="62dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/fjalla_one"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            tools:text="Playlist" />
+
+    </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/lt2_playlist_menu"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lt_playlist_menu"
+        android:background="@color/gray2" />
+
+    <RelativeLayout
+        android:id="@+id/lt3_playlist_menu"
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:layout_below="@+id/lt2_playlist_menu"
+        android:background="@color/gray">
+
+        <TextView
+            android:id="@+id/tv_name_playlist_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/fjalla_one"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            tools:text="Emotional Well-being and Healing Practices for Children" />
+
+        <TextView
+            android:id="@+id/tv_desc_playlist_menu"
+            android:layout_width="328dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="92dp"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            tools:text="In this series, we break down the impact of displacement,
+         instability, violence, and trauma in children, and offer exercises to
+         support children in their healing journey." />
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="295dp"
+        android:layout_marginLeft="335dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/red"
+        app:tint="@color/white"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        tools:targetApi="lollipop"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_series_playlist_menu"
+        android:layout_width="84dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="268dp"
+        android:fontFamily="@font/noto_sans"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        tools:text="32 series" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_playlist_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        tools:listitem="@layout/playlist_manu_item" />
+
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_src"
+        android:layout_width="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="80dp">
+
+        <ImageView
+            android:id="@+id/img_view_rv_playlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/genshin_impact_noele"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_group_rv_playlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:elevation="10dp"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            tools:text="Playlist"
+            tools:targetApi="lollipop" />
+
+        <View
+            android:id="@+id/rectangle_rv_playlist"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rectangle" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_name_rv_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/fjalla_one"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@id/rl_src"
+        android:textStyle="normal"
+        tools:text="Emotional Well-being and Healing Practices for Children"
+        android:layout_toRightOf="@id/rl_src" />
+
+    <TextView
+        android:id="@+id/tv_count_rv_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name_rv_playlist"
+        android:layout_toEndOf="@id/rl_src"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/noto_sans"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
+        android:textStyle="normal"
+        tools:text="32 video series"
+        android:layout_toRightOf="@id/rl_src"
+        tools:ignore="NotSibling" />
+
+</RelativeLayout>
