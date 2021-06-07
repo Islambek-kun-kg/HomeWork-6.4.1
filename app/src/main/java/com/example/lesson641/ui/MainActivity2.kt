@@ -1,7 +1,5 @@
 package com.example.lesson641.ui
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.example.lesson641.R
 import com.example.lesson641.base.BaseActivity
 
