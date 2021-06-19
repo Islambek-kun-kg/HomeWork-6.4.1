@@ -1,4 +1,4 @@
-package com.example.lesson641.ui
+package com.example.lesson641.ui.main
 
 import android.annotation.SuppressLint
 import android.view.View
@@ -12,35 +12,35 @@ import kotlinx.android.synthetic.main.playlist_item.view.*
 
 class MainAdapter(
     private val list: MutableList<Items> = mutableListOf(),
-    private val listener: ItemClickListener
-) : RecyclerView.Adapter<ViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(parent.inflate(R.layout.playlist_item), listener)
+    val onHolderClick: (item: Items) -> Unit
+) : RecyclerView.Adapter<MainViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+        return MainViewHolder(parent.inflate(R.layout.playlist_item))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.onBind(list[position])
+        holder.itemView.setOnClickListener {
+            onHolderClick(list[position])
+        }
     }
 
     override fun getItemCount(): Int = list.size
+
+    fun submitList(items: MutableList<Items>) {
+        val start = list.size - 1
+        list.addAll(items)
+        notifyItemRangeChanged(start, list.size - 1)
+    }
 }
 
-class ViewHolder(itemView: View, private val listener: ItemClickListener) :
+class MainViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     @SuppressLint("SetTextI18n")
     fun onBind(item: Items) {
         itemView.img_view_rv_playlist.loadImage(item.snippet.thumbnails.default.url)
         itemView.tv_title_rv_playlist.text = item.snippet.title
         itemView.tv_count_rv_playlist.text =
-            item.contentDetails.itemCount.toString() + " video series"
-//            item.contentDetails.videoPublishedAt?.let { String.format(it) }
-        itemView.setOnClickListener {
-            listener.onItemClick(item)
-        }
+            String.format("${item.contentDetails.itemCount} video series")
     }
-}
-
-interface ItemClickListener {
-    fun onItemClick(item: Items)
 }

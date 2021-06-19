@@ -3,19 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lesson641">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".YouTubeApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.Lesson641"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.MainActivity2">
+        <activity android:name="com.example.lesson641.ui.playlist_detail.PlayListDetailActivity">
 
         </activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name="com.example.lesson641.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

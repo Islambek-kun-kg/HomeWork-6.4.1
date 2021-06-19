@@ -1,7 +1,8 @@
-package com.example.lesson641.base
+package com.example.lesson641.core.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lesson641.utils.connectionCheck.ConnectChecker
 
 abstract class BaseActivity(private val layout: Int) : AppCompatActivity() {
 
@@ -11,6 +12,10 @@ abstract class BaseActivity(private val layout: Int) : AppCompatActivity() {
         setupUI()
         setupLiveData()
         showDisconnectState()
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     abstract fun setupUI()  // внутри этого метода мы инициализируем все view

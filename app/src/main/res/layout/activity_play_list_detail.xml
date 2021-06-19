@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.playlist_detail.PlayListDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/lt_playlist_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:contentInsetStart="0dp"
+        tools:targetApi="lollipop">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/img_back_arrow_playlist_menu"
+                android:layout_width="20dp"
+                android:layout_height="20.5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/back_arrow"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_back_playlist_menu"
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="33.5dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/fjalla_one"
+                android:text="@string/back"
+                android:textColor="@color/red"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/fjalla_one"
+                android:text="@string/playlist"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:paddingTop="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="@string/app_name">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/page_margin"
+                android:layout_marginVertical="@dimen/big_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:fontFamily="@font/fjalla_one"
+                    android:textColor="#333333"
+                    android:textSize="24sp"
+                    tools:text="Emotional Well-being  Healing Practices for Children" />
+
+                <TextView
+                    android:id="@+id/textDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/noto_sans"
+                    android:textColor="#1A1A1A"
+                    android:textSize="15sp"
+                    tools:text="In this series, we break down the impact of displacement, instability, violence, and trauma in children, and offer exercises to support children in their healing journey. " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/count_rv_playlist"
+                    android:fontFamily="@font/noto_sans"
+                    android:textColor="#151515"
+                    tools:text="32 series" />
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/playlist_detail_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        tools:ignore="ContentDescription" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
